@@ -24,6 +24,13 @@ class Lcm {
 	}
 
 	HashMap<Integer, Integer> findFactors(int integer) {
+		// The result is histogram of primes. For example, the 20 is factored to primes 2 * 2 * 5.
+		// This will make a histogram like that:
+		// ____________
+		// key | value
+		// ------------
+		//  2  | 2      because there are two 2s
+		//  5  | 1      because there is one 5
 		HashMap<Integer, Integer> result = new HashMap<Integer, Integer>();
 
 		if (integer == 0)
@@ -33,6 +40,7 @@ class Lcm {
 		while (integer != 1) {
 			if ((integer % prime) == 0) {
 				integer /= prime;
+				// Insert if not present, otherwise increment the histogram value
 				int count = result.containsKey(prime) ? result.get(prime) : 0;
 				result.put(prime, count + 1);
 			}
