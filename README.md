@@ -1,1 +1,1 @@
-# LowestCommonMultiplier
+# LeastCommonMultiplier
